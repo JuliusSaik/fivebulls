@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp"
+    app:cardBackgroundColor="@color/greyOnWhite"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cardview_clickanimation"
+        android:paddingBottom="18dp">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStockPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvStockPrice">
+
+            <ImageView
+                android:id="@+id/ivStar1"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:alpha="1"
+                app:srcCompat="@drawable/bullicon" />
+
+            <ImageView
+                android:id="@+id/ivStar2"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="1dp"
+                android:alpha="1"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/bullicon" />
+
+            <ImageView
+                android:id="@+id/ivStar3"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="1dp"
+                android:alpha="1"
+                app:srcCompat="@drawable/bullicon" />
+
+            <ImageView
+                android:id="@+id/ivStar4"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="1dp"
+                android:alpha="0.3"
+                app:srcCompat="@drawable/bullicon" />
+
+            <ImageView
+                android:id="@+id/ivStar5"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="1dp"
+                android:alpha="0.3"
+                app:srcCompat="@drawable/bullicon" />
+        </LinearLayout>
+        app:srcCompat="@drawable/star" />
+
+        <TextView
+            android:id="@+id/tvStockName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/sfpro_medium"
+            android:text="MSFT"
+            android:textColor="@color/switchFromBlackToGreen"
+            android:textSize="20sp"
+            android:transitionName="symbolTransition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTickerSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:textColor="@color/textColorPrimary"
+            android:fontFamily="@font/sfpro_regular"
+            android:text="$224.21"
+            android:textSize="20sp"
+            android:transitionName="priceTransition"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvStockName" />
+
+        <TextView
+            android:id="@+id/tvStockPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="28dp"
+            android:alpha="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/sfpro_regular"
+            android:maxEms="6"
+            android:minEms="5"
+            android:singleLine="true"
+            android:text="Microsoft Corporation"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvStockName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

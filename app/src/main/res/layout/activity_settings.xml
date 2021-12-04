@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".SettingsActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/settings_adContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="113dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintBottom_toTopOf="@+id/tvVersion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGetPremium">
+
+
+                    <!--ca-app-pub-3940256099942544/6300978111 -->
+
+
+                    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/bannerAdSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:visibility="visible"
+                        ads:adSize="SMART_BANNER"
+                        ads:adUnitId="ca-app-pub-8365897931941523/4954332958" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/image_rounded_corners" />
+
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/ivCrown"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="30dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/bttnGetPremium"
+                    app:layout_constraintEnd_toEndOf="@+id/bttnGetPremium"
+                    app:layout_constraintStart_toStartOf="@+id/bttnGetPremium"
+                    app:srcCompat="@drawable/premium_crown" />
+
+                <TextView
+                    android:id="@+id/tvSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:text="Settings"
+                    android:textColor="@color/switchFromGreenToWhite"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFeedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="78dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="Feedback"
+                    android:textColor="@color/blue"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSettings" />
+
+                <TextView
+                    android:id="@+id/tvReportBug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="34dp"
+                    android:textColor="@color/textColorPrimary"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:text="Report a bug"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvFeedback" />
+
+                <TextView
+                    android:id="@+id/tvRateApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="22dp"
+                    android:textColor="@color/textColorPrimary"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:text="Rate app"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReportBug" />
+
+                <TextView
+                    android:id="@+id/tvHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="Information"
+                    android:textColor="@color/blue"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRateApp" />
+
+                <TextView
+                    android:id="@+id/tvHelpGuide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="34dp"
+                    android:textColor="@color/textColorPrimary"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:text="Fivebulls help/guide"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvHelp" />
+
+                <TextView
+                    android:id="@+id/tvPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="Fivebulls"
+                    android:textColor="@color/blue"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHelpGuide" />
+
+                <TextView
+                    android:id="@+id/tvGetPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="34dp"
+                    android:textColor="@color/textColorPrimary"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:text="Premium"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvPremium" />
+
+                <TextView
+                    android:id="@+id/bttnGetPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bttn_getpremium"
+                    android:clickable="true"
+                    android:contentDescription="Get Premium"
+                    android:focusable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:padding="10dp"
+                    android:paddingStart="22dp"
+                    android:paddingEnd="22dp"
+                    android:text="Get Premium"
+                    android:textColor="@color/constantWhite"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvGetPremium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvGetPremium"
+                    app:layout_constraintVertical_bias="0.8" />
+
+                <TextView
+                    android:id="@+id/tvNightMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/sfpro_regular"
+                    android:text="Night mode"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGetPremium" />
+
+
+                <TextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="fivebulls version 1.0.3"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabSettingsBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="34dp"
+                    android:clickable="true"
+                    android:contentDescription="Go back to main screen"
+                    android:focusable="true"
+                    app:backgroundTint="@color/greyOnWhite"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:maxImageSize="16dp"
+                    app:shapeAppearanceOverlay="@style/fabChartBackBackground"
+                    app:srcCompat="@drawable/backarrow" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/bttnReportBug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:alpha="0.9"
+                    android:backgroundTint="@color/greyOnWhite"
+                    android:clickable="true"
+                    android:contentDescription="Report a bug"
+                    android:focusable="true"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReportBug"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvReportBug"
+                    app:shapeAppearanceOverlay="@style/fabSettingsBg"
+                    app:srcCompat="@drawable/frontarrow_small" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/bttnRateApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:alpha="0.9"
+                    android:backgroundTint="@color/greyOnWhite"
+                    android:clickable="true"
+                    android:contentDescription="Rate App"
+                    android:focusable="true"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvRateApp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvRateApp"
+                    app:shapeAppearanceOverlay="@style/fabSettingsBg"
+                    app:srcCompat="@drawable/frontarrow_small" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/bttnDisclaimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:alpha="0.9"
+                    android:backgroundTint="@color/greyOnWhite"
+                    android:clickable="true"
+                    android:contentDescription="Fivebulls Disclaimer"
+                    android:focusable="true"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvHelpGuide"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvHelpGuide"
+                    app:shapeAppearanceOverlay="@style/fabSettingsBg"
+                    app:srcCompat="@drawable/frontarrow_small" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchDarkTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNightMode"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvNightMode" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

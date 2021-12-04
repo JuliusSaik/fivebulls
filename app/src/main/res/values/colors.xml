@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EEF0F4</color>
+    <color name="colorPrimaryDark">#EEF0F4</color>
+    <color name="colorCard">#fcfdfd</color>
+    <color name="colorPrimaryBlack">#2b3033</color>
+    <color name="colorAccent">#EEF0F4</color>
+    <color name="colorSquareDiv">#F8F9FB</color>
+    <color name="blue">#0e5e5b</color>
+    <color name="monochrom">#148a86</color>
+    <color name="fabPlus">#148a86</color>
+    <color name="chartBlue">#10807B</color>
+    <color name="greyOnWhite">#F5F6F8</color>
+    <color name="grey">#DEDFE0</color>
+    <color name="textColorPrimary">#2b3033</color>
+    <color name="navigationBarColor">#EEF0F4</color>
+
+    //constant colors and switch
+    <color name="constantWhite">#ffff</color>
+    <color name="switchFromGreenToWhite">#0e5e5b</color>
+    <color name="switchFromBlackToGreen">#2b3033</color>
+
+
+
+    <string-array name="pieChartColors">
+        <item>#10807B</item>
+        <item>#0E6D6D</item>
+        <item>#0D5A5F</item>
+        <item>#0B4752</item>
+        <item>#0A3444</item>
+        <item>#082136</item>
+        <item>#092B3D</item>
+        <item>#0A3D4B</item>
+        <item>#0D5A5F</item>
+        <item>#0E6D6D</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutHelp"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsHelpActivity">
+
+    <TextView
+        android:id="@+id/tvDisclaimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/sfpro_regular"
+        android:text="Disclaimer/Help"
+        android:textColor="@color/switchFromGreenToWhite"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabDisclaimerBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="34dp"
+        android:clickable="true"
+        android:contentDescription="Go back to main screen"
+        android:focusable="true"
+        app:backgroundTint="@color/colorCard"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabSize="mini"
+        app:maxImageSize="16dp"
+        app:srcCompat="@drawable/backarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/fabBackBackground" />
+
+    <ScrollView
+        android:id="@+id/scrollViewHELP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="136dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisclaimer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAnalysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/sfpro_medium"
+                android:text="Analysis"
+                android:textColor="@color/blue"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvAnalysisText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/sfpro_regular"
+                android:text="Fivebulls is designed to calculate the rating of a stock by using the
+fundamental analysis method, meaning it's best used for long-term investing, not short-term day trading."
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvRatings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/sfpro_medium"
+                android:text="Ratings"
+                android:textColor="@color/blue"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvRatingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/sfpro_regular"
+                android:text="Fivebulls rates stock by their long term growth, debt stability and price value. \n\nQuick guide for rating system of fivebulls:
+                \n1 - Stock is really overvalued and or has terrible growth/stability.
+        \n2 - Stock is fairly overvalued and or growth/stability is bad.
+        \n3 - Stock is fair value, has normal stability and decent growth,
+        \n4 - Stock is undervalued, has really good growth and solid stability.
+        \n5 - Stock is really undervalued, has fantastic growth and great stability.
+        \n(Technology stocks might have lower ratings because of the nature of their PE Ratio)"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvAPI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/sfpro_medium"
+                android:text="API"
+                android:textColor="@color/blue"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvAPItext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/sfpro_regular"
+                android:text="Metrics are acquired from the Yahoo Finance Low Latency API, which has limited calls, so please be patient if the limit is reached :)
+(Limit resets every day)"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

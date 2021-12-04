@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".IntrinsicValueActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <HorizontalScrollView
+                    android:id="@+id/DCFScrollLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/DCFEstimates">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/DCFestimatesLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/chartactivity_square2"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="24dp">
+
+
+                        <TextView
+                            android:id="@+id/allnumbersinthousands"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="(all cashflows are in thousands)"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDiscountedValue" />
+
+                        <TextView
+                            android:id="@+id/tvFreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="Free Cash \nFlow"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv2017A" />
+
+                        <TextView
+                            android:id="@+id/tvDiscountRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="Discount \nRate"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvFreeCashFlow" />
+
+
+                        <TextView
+                            android:id="@+id/tvDiscountedValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="Present \nValue"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDiscountRate" />
+
+                        <TextView
+                            android:id="@+id/tv2017A"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2017A"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tvFreeCashFlow"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv2018A"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2018A"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2017A"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv2019A"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2019A"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2018A"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv2020A"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2020A"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2019A"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv2021E"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2021E"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2020A"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv2022E"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2022E"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2021E"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/tv2023E"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2023E"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2022E"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/tv2024E"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2024E"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2023E"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/tv2025E"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="64dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="2025E"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2024E"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTerminalVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="72dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="Terminal Value"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/tv2025E"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/EmptySpaceForChart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/sfpro_medium"
+                            android:text="Space"
+                            android:textSize="15sp"
+                            android:visibility="invisible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTerminalVal"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv2017FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2017A"
+                            app:layout_constraintStart_toStartOf="@id/tv2017A"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+
+                        <TextView
+                            android:id="@+id/tv2018FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2018A"
+                            app:layout_constraintStart_toStartOf="@id/tv2018A"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+                        <TextView
+                            android:id="@+id/tv2019FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2019A"
+                            app:layout_constraintStart_toStartOf="@id/tv2019A"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+
+                        <TextView
+                            android:id="@+id/tv2020FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2020A"
+                            app:layout_constraintStart_toStartOf="@id/tv2020A"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+
+                        <TextView
+                            android:id="@+id/tv2021FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2021E"
+                            app:layout_constraintStart_toStartOf="@id/tv2021E"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+                        <TextView
+                            android:id="@+id/tv2022FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2022E"
+                            app:layout_constraintStart_toStartOf="@id/tv2022E"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+                        <TextView
+                            android:id="@+id/tv2023FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2023E"
+                            app:layout_constraintStart_toStartOf="@id/tv2023E"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+
+                        <TextView
+                            android:id="@+id/tv2024FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2024E"
+                            app:layout_constraintStart_toStartOf="@id/tv2024E"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+                        <TextView
+                            android:id="@+id/tv2025FreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tv2025E"
+                            app:layout_constraintStart_toStartOf="@id/tv2025E"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+
+                        <TextView
+                            android:id="@+id/tvTerminalFreeCashFlow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFreeCashFlow"
+                            app:layout_constraintEnd_toEndOf="@id/tvTerminalVal"
+                            app:layout_constraintStart_toStartOf="@id/tvTerminalVal"
+                            app:layout_constraintTop_toTopOf="@id/tvFreeCashFlow" />
+
+                        <TextView
+                            android:id="@+id/tv2021DiscR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="9.4%"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountRate"
+                            app:layout_constraintEnd_toEndOf="@id/tv2021E"
+                            app:layout_constraintStart_toStartOf="@id/tv2021E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountRate" />
+
+
+                        <TextView
+                            android:id="@+id/tv2022DiscR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="19.6%"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountRate"
+                            app:layout_constraintEnd_toEndOf="@id/tv2022E"
+                            app:layout_constraintStart_toStartOf="@id/tv2022E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountRate" />
+
+                        <TextView
+                            android:id="@+id/tv2023DiscR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="30%"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountRate"
+                            app:layout_constraintEnd_toEndOf="@id/tv2023E"
+                            app:layout_constraintStart_toStartOf="@id/tv2023E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountRate" />
+
+
+                        <TextView
+                            android:id="@+id/tv2024DiscR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="43%"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountRate"
+                            app:layout_constraintEnd_toEndOf="@id/tv2024E"
+                            app:layout_constraintStart_toStartOf="@id/tv2024E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountRate" />
+
+
+                        <TextView
+                            android:id="@+id/tv2025DiscR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="56%"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountRate"
+                            app:layout_constraintEnd_toEndOf="@id/tv2025E"
+                            app:layout_constraintStart_toStartOf="@id/tv2025E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountRate" />
+
+
+                        <TextView
+                            android:id="@+id/tvTerimanlDiscR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="56%"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountRate"
+                            app:layout_constraintEnd_toEndOf="@id/tvTerminalVal"
+                            app:layout_constraintStart_toStartOf="@id/tvTerminalVal"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountRate" />
+
+
+                        <TextView
+                            android:id="@+id/tv2021PresVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="8,987,252,521"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountedValue"
+                            app:layout_constraintEnd_toEndOf="@id/tv2021E"
+                            app:layout_constraintStart_toStartOf="@id/tv2021E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountedValue" />
+
+
+                        <TextView
+                            android:id="@+id/tv2022PresVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="12,987,252,521"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountedValue"
+                            app:layout_constraintEnd_toEndOf="@id/tv2022E"
+                            app:layout_constraintStart_toStartOf="@id/tv2022E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountedValue" />
+
+
+                        <TextView
+                            android:id="@+id/tv2023PresVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="16,987,252,521"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountedValue"
+                            app:layout_constraintEnd_toEndOf="@id/tv2023E"
+                            app:layout_constraintStart_toStartOf="@id/tv2023E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountedValue" />
+
+
+                        <TextView
+                            android:id="@+id/tv2024PresVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="20,987,252,521"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountedValue"
+                            app:layout_constraintEnd_toEndOf="@id/tv2024E"
+                            app:layout_constraintStart_toStartOf="@id/tv2024E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountedValue" />
+
+
+                        <TextView
+                            android:id="@+id/tv2025PresVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="25,987,252,521"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountedValue"
+                            app:layout_constraintEnd_toEndOf="@id/tv2025E"
+                            app:layout_constraintStart_toStartOf="@id/tv2025E"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountedValue" />
+
+
+                        <TextView
+                            android:id="@+id/tvTerminalPresVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="542,521,987,252,521"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiscountedValue"
+                            app:layout_constraintEnd_toEndOf="@id/tvTerminalVal"
+                            app:layout_constraintStart_toStartOf="@id/tvTerminalVal"
+                            app:layout_constraintTop_toTopOf="@id/tvDiscountedValue" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+
+                <FrameLayout
+                    android:id="@+id/intrs_adContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@color/colorPrimary"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quickValuesLayout">
+
+                    <!--ca-app-pub-3940256099942544/6300978111 -->
+                    <!-- ads:adUnitId="ca-app-pub-8365897931941523/4181335004"-->
+
+                    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/bannerAdIntrs"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:visibility="visible"
+                        ads:adSize="SMART_BANNER"
+                        ads:adUnitId="ca-app-pub-8365897931941523/7479898250" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/image_rounded_corners" />
+
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/ivDividerIntrs"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="32dp"
+                    app:tint="@color/textColorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/intrs_adContainer"
+                    android:src="@drawable/divider" />
+
+                <LinearLayout
+                    android:id="@+id/lowHighLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="62dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/intrsValue">
+
+                    <TextView
+                        android:id="@+id/tvLowCalc"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/iosselector_disabled2_ani"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Low"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvAvarageCalc"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/iosselector_active3_ani"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Average"
+                        android:textColor="@color/constantWhite"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvHighCalc"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/iosselector_disabled1_ani"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="High"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/stockSymbolFr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:textColor="@color/textColorPrimary"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="APPL"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/intrsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="Intrinsic Value"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/stockSymbolFr" />
+
+
+                <TextView
+                    android:id="@+id/QuickValues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="Quick Values"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lowHighLayout" />
+
+
+                <TextView
+                    android:id="@+id/DCFEstimates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="62dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="DCF Estimates (5 Year)"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivDividerIntrs" />
+
+                <TextView
+                    android:id="@+id/calculationsIntr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="38dp"
+                    android:fontFamily="@font/sfpro_medium"
+                    android:text="Intrinsic Value Calculations"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/DCFScrollLayout" />
+
+                <TextView
+                    android:id="@+id/tvErrorWACC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfpro_light"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginBottom="25dp"
+                    app:layout_constraintBottom_toBottomOf="@id/calculationsIntr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Some debt data is invalid. Use larger safety margins."
+                    android:textSize="14sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/quickValuesLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="38dp"
+                    android:background="@drawable/chartactivity_square2"
+                    android:elevation="5dp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/QuickValues">
+
+                    <TextView
+                        android:id="@+id/quickIntrinsc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Intrinsic Value"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvQuickIntrinsicVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="@id/quickIntrinsc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/quickIntrinsc" />
+
+
+                    <TextView
+                        android:id="@+id/quickIntrinsicMrgn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Safety Margin"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/quickIntrinsc" />
+
+                    <TextView
+                        android:id="@+id/tvQuickIntrinsicValMargin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="@id/quickIntrinsicMrgn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/quickIntrinsicMrgn" />
+
+
+                    <TextView
+                        android:id="@+id/quickCurrentPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Current Price"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/quickIntrinsicMrgn" />
+
+                    <TextView
+                        android:id="@+id/tvQuickCurrentPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="@id/quickCurrentPrice"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/quickCurrentPrice" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/IntrinsicValueCalcLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/chartactivity_square2"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calculationsIntr">
+
+                    <LinearLayout
+                        android:id="@+id/WACCrateContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/requiredReturnRate"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/tvWACCReturnRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_regular"
+                            android:text="-"
+                            android:textColor="@color/chartBlue"
+                            android:textSize="17sp" />
+
+                        <ImageView
+                            android:id="@+id/arrowforWACC"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/frontarrow_small"
+                            app:tint="@color/chartBlue" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/requiredReturnRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Required Return Rate (WACC)"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/returnratestext" />
+
+
+                    <TextView
+                        android:id="@+id/returnratestext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.8"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="Return Rates"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/perpetualGrowthRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Perpetual Growth Rate"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/WACCrateContainer" />
+
+                    <TextView
+                        android:id="@+id/tvPerpGrowthRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/perpetualGrowthRate" />
+
+                    <TextView
+                        android:id="@+id/DiscountedCashFlow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:alpha="0.8"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="Discounted Cash Flows"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPerpGrowthRate" />
+
+                    <TextView
+                        android:id="@+id/todaysValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Todays Value"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/DiscountedCashFlow" />
+
+
+                    <TextView
+                        android:id="@+id/tvTodaysValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/todaysValue" />
+
+                    <TextView
+                        android:id="@+id/sharesout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Shares Outstanding"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTodaysValue" />
+
+                    <TextView
+                        android:id="@+id/tvSharesOutstanding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/sharesout" />
+
+
+                    <TextView
+                        android:id="@+id/IntrisValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:alpha="0.8"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="Intrinsic Values"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSharesOutstanding" />
+
+                    <TextView
+                        android:id="@+id/textIntrinsicValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="Intrinsic Value"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/IntrisValues" />
+
+
+                    <TextView
+                        android:id="@+id/tvIntrinsicValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textIntrinsicValues" />
+
+                    <TextView
+                        android:id="@+id/textwithmargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/sfpro_medium"
+                        android:text="With Margin of Safety"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvIntrinsicValue" />
+
+                    <TextView
+                        android:id="@+id/tvWithMarginOfSafety"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/sfpro_regular"
+                        android:text="-"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textwithmargin" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabBackIntrinsic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="34dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:contentDescription="Go back to main screen"
+                    android:focusable="true"
+                    app:backgroundTint="@color/colorCard"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:maxImageSize="16dp"
+                    app:tint="@color/textColorPrimary"
+                    app:shapeAppearanceOverlay="@style/fabChartBackBackground"
+                    app:srcCompat="@drawable/backarrow" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
