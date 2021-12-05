@@ -51,17 +51,18 @@ public class SettingsActivity extends AppCompatActivity implements PurchasesUpda
     private static final String SKU_NAME = "fivebulls_subscription";
     private static final String BASE_64 =  new Secrets().gethMeoxORw("com.saikauskas.julius.fivebulls");
 
-    TextView bttnBuy, tvVersion;
+    private TextView bttnBuy, tvVersion;
     //FloatingActionButton tvPremium;
-    FloatingActionButton fabBack, bttnReportBug, bttnRateApp, bttnDisclaimer;
-    ImageView ivCrown;
+    private FloatingActionButton fabBack, bttnReportBug, bttnRateApp, bttnDisclaimer;
+    private ImageView ivCrown;
 
-    SwitchCompat switchNightMode;
+    private SwitchCompat switchNightMode;
 
-    TinyDB tinyDB;
+    private TinyDB tinyDB;
 
-    FrameLayout adContainer;
-    AdView bannerAd;
+
+    private FrameLayout adContainer;
+    private AdView bannerAd;
 
 
     @Override

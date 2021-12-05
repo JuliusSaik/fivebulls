@@ -961,9 +961,7 @@ public class IntrinsicValueActivity extends AppCompatActivity {
         }
 
         strInterest = dfLargeNr.format(costOfDebtBTD * 100);
-
-        Toast.makeText(this, "Interest rate is: " + interestExpense / totalDebt * 100, Toast.LENGTH_SHORT).show();
-
+        
         //(1-t) calculation because interest is tax deductible
         double incomeBeforeTax = (double) this.incomeBeforeTax;
         double incomeTaxExpense = (double) this.incomeTaxExpense;

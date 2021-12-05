@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
@@ -75,13 +76,13 @@ public class StockChartActivity extends AppCompatActivity {
     private static final String KEY = "8pCmwGLGRlaqvpG8geaZw5I8KiMRwBkG477pTNpN";
 
 
-    private String querySymbol, recommendation;
+    private String querySymbol;
 
     Group ratingsGroup, statisticsGroup;
 
     private TextView tvStockDate, tvStockPrice, tvSymbol, tvDay, tvWeek, tv3Month, tv6Month, tvYear, tv5Year, tvMax, tvStatistics, tvRatings;
 
-    private double peRatio, currentDiv, fiveYearDiv,  payoutRatio,  earningGrowth,  quickRatio, pegRatio, stockPrice, epsActual, epsGrowth, beta;
+    private double peRatio, currentDiv, fiveYearDiv,  payoutRatio,  earningGrowth,  quickRatio, pegRatio, stockPrice, epsGrowth, beta;
     private double targetHighPrice, targetLowPrice, targetMedianPrice;
 
     private long marketCap, sharesOut;
@@ -89,10 +90,9 @@ public class StockChartActivity extends AppCompatActivity {
     private TextView tvPeRatio, tvDividendYield, tvFiveYearDiv,  tvPayoutRatio,  tvEarningGrowth,  tvQuickRatio, tvPegRatio, tvEpsGrowth,
             tvPeRating, tvDivRating, tvPayoutRating, tvEarningsRating, tvQuickRating, tvPegRating, tvEpsRating;
 
-    private TextView tvHighPrice, tvLowPrice,tvMedianPrice, tvCurrentPrice, tvRecommendation, tvInstrinsicValue;
+    private TextView tvHighPrice, tvLowPrice,tvMedianPrice, tvCurrentPrice, tvInstrinsicValue;
 
     int PeRating, DivRating, PayoutRating, EarningsRating, QuickRating, PegRating, EpsRating, stockRating;
-    long dataExpiryDate;
 
     FragmentContainerView fragmentContainerView;
 
@@ -109,6 +109,8 @@ public class StockChartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stockchart);
+
+        tinyDB = new TinyDB(StockChartActivity.this);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://yfapi.net/")
@@ -143,15 +145,12 @@ public class StockChartActivity extends AppCompatActivity {
         tvEarningGrowth = findViewById(R.id.tvEarningGrowth);
         tvQuickRatio = findViewById(R.id.tvQuickRatio);
         tvPegRatio = findViewById(R.id.tvPegRatio);
-        //tvEpsActual = findViewById(R.id.tvEpsActual);
         tvEpsGrowth = findViewById(R.id.tvEpsGrowth);
 
         tvHighPrice = findViewById(R.id.tvHighPrice);
         tvLowPrice = findViewById(R.id.tvLowPrice);
         tvMedianPrice = findViewById(R.id.tvMedianPrice);
         tvCurrentPrice = findViewById(R.id.tvCurrentPrice);
-        tvRecommendation = findViewById(R.id.tvRecommendation);
-
 
         tvPeRating = findViewById(R.id.tvPeRating);
         tvDivRating = findViewById(R.id.tvDivRating);
@@ -182,7 +181,7 @@ public class StockChartActivity extends AppCompatActivity {
             tvStatistics.setTextColor(getResources().getColor(R.color.constantWhite));
             tvRatings.setTextColor(getResources().getColor(R.color.textColorPrimary));
 
-            tvStatistics.setBackground(getDrawable(R.drawable.iosselector_active1_ani));
+            tvStatistics.setBackground(AppCompatResources.getDrawable(this, R.drawable.iosselector_active1_ani));
             tvRatings.setBackground(getDrawable(R.drawable.iosselector_disabled1_ani));
 
         });
@@ -230,8 +229,6 @@ public class StockChartActivity extends AppCompatActivity {
 
 
         getIntentAndSetValues();
-
-        tinyDB = new TinyDB(StockChartActivity.this);
 
         if (tinyDB.getListLong(querySymbol + "price1y").isEmpty()){
             getStockChart(querySymbol, "1d", "1y");
@@ -345,7 +342,7 @@ public class StockChartActivity extends AppCompatActivity {
         adContainer = findViewById(R.id.chart_adContainer);
         bannerAd = findViewById(R.id.bannerAdChart);
         //check if user has premium or not
-        if (hasPremium()) {
+        if (!hasPremium()) {
             MobileAds.initialize(this, new OnInitializationCompleteListener() {
                 @Override
                 public void onInitializationComplete(@NonNull @NotNull InitializationStatus initializationStatus) {
@@ -442,42 +439,15 @@ public class StockChartActivity extends AppCompatActivity {
 
     }
 
-
-   /* private void checkPremiumSetConstraints(){
-
-        ConstraintLayout constraintLayout = findViewById(R.id.mainChartLayout);
-        ConstraintSet constraintSet = new ConstraintSet();
-
-        if (hasPremium()){
-
-            adContainer.setVisibility(View.GONE);
-
-            constraintSet.clone(constraintLayout);
-            constraintSet.connect(R.id.statisticsRatingsLayout, ConstraintSet.TOP, R.id.ivDivider, ConstraintSet.BOTTOM, 136);
-            constraintSet.applyTo(constraintLayout);
-
-
-        } else {
-
-            adContainer.setVisibility(View.VISIBLE);
-            constraintSet.clone(constraintLayout);
-            constraintSet.connect(R.id.statisticsRatingsLayout, ConstraintSet.TOP, R.id.chart_adContainer, ConstraintSet.BOTTOM, 108);
-            constraintSet.applyTo(constraintLayout);
-
-        }
-    }*/
-
     public void checkStatesAndSetStyle(TextView textToChange, List<TextView> textToKeep){
 
         textToChange.setAlpha(1.0f);
         textToChange.setBackground(getDrawable(R.drawable.datechange_animation));
-        //TransitionDrawable transition = (TransitionDrawable) textToChange.getBackground();
-        //transition.startTransition(500);
+
 
         for (TextView date : textToKeep) {
             date.setAlpha(0.7f);
             date.setBackground(null);
-            //transition.reverseTransition(500);
         }
 
 
@@ -500,14 +470,12 @@ public class StockChartActivity extends AppCompatActivity {
         earningGrowth = getIntent().getDoubleExtra("earningsGrowth", defaultIntentValue);
         quickRatio = getIntent().getDoubleExtra("quickRatio", defaultIntentValue);
         pegRatio = getIntent().getDoubleExtra("pegRatio", defaultIntentValue);
-        epsActual = getIntent().getDoubleExtra("epsActual", defaultIntentValue);
         epsGrowth = getIntent().getDoubleExtra("epsGrowth", defaultIntentValue);
 
 
         targetHighPrice = getIntent().getDoubleExtra("highPrice", defaultIntentValue);
         targetLowPrice = getIntent().getDoubleExtra("lowPrice", defaultIntentValue);
         targetMedianPrice = getIntent().getDoubleExtra("medianPrice", defaultIntentValue);
-        recommendation = getIntent().getStringExtra("recommendation");
 
         marketCap = getIntent().getLongExtra("marketCap", 0);
         sharesOut = getIntent().getLongExtra("sharesOut", 0);
@@ -526,13 +494,11 @@ public class StockChartActivity extends AppCompatActivity {
         tvQuickRatio.setText(String.format("%.2f", quickRatio));
         tvPegRatio.setText(String.format("%.2f", pegRatio));
         tvEpsGrowth.setText(String.format("%.2f", epsGrowth * 100) + "%");
-        //tvEpsActual.setText("$" + String.format("%.2f", epsActual));
 
         tvHighPrice.setText("$" + String.format("%.2f", targetHighPrice));
         tvLowPrice.setText("$" + String.format("%.2f", targetLowPrice));
         tvMedianPrice.setText("$" + String.format("%.2f", targetMedianPrice));
         tvCurrentPrice.setText("$" + String.format("%.2f", stockPrice));
-        //tvRecommendation.setText("Price Recomm. " + recommendation.toUpperCase());
 
 
         PeRating = getIntent().getIntExtra("PeRating", defaultIntValue);

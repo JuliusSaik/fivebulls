@@ -1,6 +1,7 @@
 package com.saikauskas.julius.fivebulls;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -109,9 +110,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        setupWindowAnimations();
 
         tinyDB = new TinyDB(MainActivity.this);
-
 
         if(tinyDB.getBoolean("IsNightMode")){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -119,8 +123,6 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         }
-        setContentView(R.layout.activity_main);
-        setupWindowAnimations();
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
         KEY = new Secrets().getuAnYVyWY(PACKAGE_NAME);
