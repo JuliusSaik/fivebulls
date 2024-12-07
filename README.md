@@ -1,7 +1,9 @@
-Fivebulls is an app that automates fundamental analysis for long-term investors by analaysing the company stock financial data.
+## Fivebulls is an app that automates fundamental U.S stock analysis for long-term investors
+
 It checks the ideal key-metric ranges that a safe, stable and long-lasting company should have and automatically finds the intrinsic value of the stock by using the Discounted cash flow (DCF) model.
 You can search across almost all U.S stocks and add them to your list, track them and their graphs.
 The app uses yahoofinance API to get all of the information. Also comes with dark mode.
+
 (Currently is non-functional and removed from google play due to inactivity, here for archiving purposes)
 
 ![StoreListingTemplateArtboard 7](https://github.com/JuliusSaik/fivebulls/assets/40319533/d7154d9d-4e54-4c8a-9ee5-32176f202091)
